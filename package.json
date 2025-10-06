@@ -4,7 +4,13 @@
   "description": "name: GitHub Actions Demo\r run-name: ${{ github.actor }} is testing out GitHub Actions 🚀\r on: [push]\r jobs:\r   Explore-GitHub-Actions:\r     runs-on: ubuntu-latest\r     steps:\r       - run: echo \"🎉 The job was automatically triggered by a ${{ github.event_name }} event.\"\r       - run: echo \"🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!\"\r       - run: echo \"🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}.\"\r       - name: Check out repository code\r         uses: actions/checkout@v5\r       - run: echo \"💡 The ${{ github.repository }} repository has been cloned to the runner.\"\r       - run: echo \"🖥️ The workflow is now ready to test your code on the runner.\"\r       - name: List files in the repository\r         run: |\r           ls ${{ github.workspace }}\r       - run: echo \"🍏 This job's status is ${{ job.status }}.\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+   "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo \"Error: no test specified\"",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,19 @@
   "bugs": {
     "url": "https://github.com/rohan437-3104/COMP3104/issues"
   },
-  "homepage": "https://github.com/rohan437-3104/COMP3104#readme"
+  "homepage": "https://github.com/rohan437-3104/COMP3104#readme",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+},
+"devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+
 }
