@@ -4,13 +4,12 @@
   "description": "name: GitHub Actions Demo\r run-name: ${{ github.actor }} is testing out GitHub Actions 🚀\r on: [push]\r jobs:\r   Explore-GitHub-Actions:\r     runs-on: ubuntu-latest\r     steps:\r       - run: echo \"🎉 The job was automatically triggered by a ${{ github.event_name }} event.\"\r       - run: echo \"🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!\"\r       - run: echo \"🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}.\"\r       - name: Check out repository code\r         uses: actions/checkout@v5\r       - run: echo \"💡 The ${{ github.repository }} repository has been cloned to the runner.\"\r       - run: echo \"🖥️ The workflow is now ready to test your code on the runner.\"\r       - name: List files in the repository\r         run: |\r           ls ${{ github.workspace }}\r       - run: echo \"🍏 This job's status is ${{ job.status }}.\"",
   "main": "index.js",
   "scripts": {
-   "start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\"",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "repository": {
     "type": "git",
@@ -32,9 +31,20 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
-},
-"devDependencies": {
+  },
+  "devDependencies": {
     "gh-pages": "^6.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
-
 }
